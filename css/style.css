@@ -1,0 +1,27 @@
+body {
+  font-family: 'nexa', sans-serif;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url(/assets/nexa.ttf) format('truetype');
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #6c63ff;
+  border-color: #6c63ff;
+}
+
+.btn-outline-primary {
+  border-color: #6c63ff;
+  color: #6c63ff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #6c63ff;
+  color: white;
+}

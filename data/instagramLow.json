@@ -1,0 +1,92 @@
+[
+  {
+    "icon": "bi-instagram",
+    "id": "3629",
+    "judul": "100 Followers Instagram",
+    "harga": "5.000"
+  },
+  {
+    "icon": "bi-instagram",
+    "id": "3629",
+    "judul": "200 Followers Instagram",
+    "harga": "10.000"
+  },
+  {
+    "icon": "bi-instagram",
+    "id": "3629",
+    "judul": "300 Followers Instagram",
+    "harga": "15.000"
+  },
+  {
+    "icon": "bi-instagram",
+    "id": "3629",
+    "judul": "400 Followers Instagram",
+    "harga": "20.000"
+  },
+  {
+    "icon": "bi-instagram",
+    "id": "3629",
+    "judul": "500 Followers Instagram",
+    "harga": "25.000"
+  },
+  {
+    "icon": "bi-hand-thumbs-up",
+    "id": "3750",
+    "judul": "1000 Like Instagram",
+    "harga": "5.000"
+  },
+  {
+    "icon": "bi-hand-thumbs-up",
+    "id": "3750",
+    "judul": "2000 Like Instagram",
+    "harga": "10.000"
+  },
+  {
+    "icon": "bi-hand-thumbs-up",
+    "id": "3750",
+    "judul": "3000 Like Instagram",
+    "harga": "15.000"
+  },
+  {
+    "icon": "bi-hand-thumbs-up",
+    "id": "3750",
+    "judul": "4000 Like Instagram",
+    "harga": "20.000"
+  },
+  {
+    "icon": "bi-hand-thumbs-up",
+    "id": "3750",
+    "judul": "5000 Like Instagram",
+    "harga": "25.000"
+  },
+  {
+    "icon": "bi-eye",
+    "id": "3560",
+    "judul": "1000 View Instagram",
+    "harga": "1.000"
+  },
+  {
+    "icon": "bi-eye",
+    "id": "3560",
+    "judul": "2000 View Instagram",
+    "harga": "2.000"
+  },
+  {
+    "icon": "bi-eye",
+    "id": "3560",
+    "judul": "3000 View Instagram",
+    "harga": "3.000"
+  },
+  {
+    "icon": "bi-eye",
+    "id": "3560",
+    "judul": "4000 View Instagram",
+    "harga": "4.000"
+  },
+  {
+    "icon": "bi-eye",
+    "id": "3560",
+    "judul": "5000 View Instagram",
+    "harga": "5.000"
+  }
+]
