@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Promo Spesial | Fahri Store25</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .promo-card {
+      border-radius: 15px;
+      transition: 0.2s ease;
+    }
+    .promo-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .payment-modal {
+      position: fixed;
+      bottom: -100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      z-index: 9999;
+      transition: 0.3s ease;
+      display: none;
+      padding: 20px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+    .payment-modal .modal-content {
+      text-align: center;
+    }
+    .payment-modal .close {
+      float: right;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="bg-light text-dark">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="/index.html">Fahri Store25</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://m.facebook.com/61576216021664">Testimoni</a></li>
+          <li class="nav-item"><a class="nav-link active text-primary" href="/promo.html">Promo Hari Ini</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Promo Section -->
+  <div class="container my-4">
+    <h2 class="text-center text-primary mb-4">Promo Spesial</h2>
+    <div class="row" id="promoList"></div>
+  </div>
+
+<!-- Modal sliding -->
+<div id="paymentModal" style="display:none; position: fixed; bottom: -100%; left: 0; width: 100%; background: white; border-top-left-radius: 15px; border-top-right-radius: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,0.3); transition: bottom 0.3s ease; padding: 20px; z-index: 1050;">
+  <h2>Silahkan scan qris dibawah ini untuk melakukan pembayaran</h2>
+  <p>Klik gambar untuk zoom</p>
+  <img id="qrisImage" src="/assets/QRIS.png" alt="QRIS" style="width:150px; margin: 15px 0; cursor: pointer;">
+  <p>Jika sudah, <strong>DIWAJIBKAN KIRIM BUKTI TF!</strong></p>
+  <p>Klik button dibawah untuk kirim bukti tf</p>
+  <button id="btnSendProof" class="btn btn-primary w-100">KIRIM BUKTI</button>
+  <button id="btnCloseModal" class="btn btn-secondary w-100 mt-2">TUTUP</button>
+</div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 text-muted bg-white border-top">
+    &copy; 2025 FahriStore25. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    const adminWhatsApp = '6289601314023'; // Ganti dengan nomor WhatsApp admin
+    let selectedOrder = null;
+
+    const paymentModal = document.getElementById('paymentModal');
+    const btnCloseModal = document.getElementById('btnCloseModal');
+    const btnSendProof = document.getElementById('btnSendProof');
+    const qrisImage = document.getElementById('qrisImage');
+
+    function showPaymentModal(item) {
+      selectedOrder = item;
+      paymentModal.style.display = 'block';
+      setTimeout(() => paymentModal.style.bottom = '0', 10);
+    }
+
+    function hidePaymentModal() {
+      paymentModal.style.bottom = '-100%';
+      setTimeout(() => paymentModal.style.display = 'none', 300);
+    }
+
+    btnCloseModal.onclick = hidePaymentModal;
+
+    btnSendProof.onclick = () => {
+      if (!selectedOrder) return;
+      const pesan = `Halo Admin, saya order pesanan: \nID: ${selectedOrder.id} \n${selectedOrder.judul}\nHarga: Rp${selectedOrder.harga}\nBerikut bukti transfernya:`;
+      const waUrl = `https://wa.me/${adminWhatsApp}?text=${encodeURIComponent(pesan)}`;
+      window.open(waUrl, '_blank');
+      hidePaymentModal();
+    };
+
+    qrisImage.onclick = () => {
+      Swal.fire({
+        title: 'QRIS Pembayaran',
+        imageUrl: qrisImage.src,
+        imageAlt: 'QRIS',
+        html: '<p>Silakan scan QRIS ini untuk membayar.</p>',
+        showCloseButton: true,
+        showConfirmButton: false,
+        width: 350,
+      });
+    };
+
+    async function loadPromoData() {
+      try {
+        const res = await fetch('data/promo.json');
+        const data = await res.json();
+        const container = document.getElementById('promoList');
+        container.innerHTML = '';
+
+        data.forEach((item, index) => {
+          container.innerHTML += `
+            <div class="col-md-6 mb-4">
+              <div class="card promo-card shadow-sm">
+                <div class="card-body text-center">
+                  <i class="bi ${item.icon} display-6 text-primary mb-2"></i>
+                  <p class="card-text text-muted">ID: ${item.id}</p>
+                  <h5 class="card-title">${item.judul}</h5>
+                  <p class="card-text text-muted">Rp<s>${item.harpr}</s></p>
+                  <p class="card-text text-muted">Rp${item.harga}</p>
+                  <button class="btn btn-success btn-sm" data-index="${index}">Order Pesanan</button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        document.querySelectorAll('.btn-success').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const index = e.target.dataset.index;
+            showPaymentModal(data[index]);
+          });
+        });
+
+      } catch (e) {
+        console.error('Gagal load data promo:', e);
+      }
+    }
+
+    window.onload = loadPromoData;
+  </script>
+</body>
+</html>
