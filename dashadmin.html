@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fahri Store25 - Dashboard Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+</head>
+<body class="bg-light text-dark">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">Fahri Store25</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-danger fw-semibold" href="#" onclick="logout()">
+              <i class="bi bi-box-arrow-right"></i> Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Konten -->
+  <div class="container mt-4">
+    <h4 class="mb-3 fw-bold text-center">Informasi Pengunjung</h4>
+    <div class="row" id="visitorCards"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 text-muted bg-white border-top mt-5">
+    &copy; 2025 FahriStore25. All rights reserved.
+  </footer>
+
+  <script>
+const _0x1cb2eb=_0x34df;function _0x34df(_0x35abd6,_0x1d90ab){const _0xa3f98a=_0xa3f9();return _0x34df=function(_0x34df4e,_0x40792e){_0x34df4e=_0x34df4e-0x183;let _0x101288=_0xa3f98a[_0x34df4e];return _0x101288;},_0x34df(_0x35abd6,_0x1d90ab);}(function(_0x127760,_0x36085d){const _0x5e8cad=_0x34df,_0x5095ed=_0x127760();while(!![]){try{const _0x54d049=-parseInt(_0x5e8cad(0x18f))/0x1+parseInt(_0x5e8cad(0x195))/0x2*(-parseInt(_0x5e8cad(0x1a3))/0x3)+parseInt(_0x5e8cad(0x193))/0x4+parseInt(_0x5e8cad(0x18e))/0x5*(-parseInt(_0x5e8cad(0x189))/0x6)+-parseInt(_0x5e8cad(0x19d))/0x7+parseInt(_0x5e8cad(0x192))/0x8*(parseInt(_0x5e8cad(0x197))/0x9)+parseInt(_0x5e8cad(0x190))/0xa;if(_0x54d049===_0x36085d)break;else _0x5095ed['push'](_0x5095ed['shift']());}catch(_0x468720){_0x5095ed['push'](_0x5095ed['shift']());}}}(_0xa3f9,0x23d72));const firebaseConfig={'apiKey':_0x1cb2eb(0x1a9),'authDomain':_0x1cb2eb(0x19e),'databaseURL':_0x1cb2eb(0x191),'projectId':_0x1cb2eb(0x199),'storageBucket':_0x1cb2eb(0x1a4),'messagingSenderId':_0x1cb2eb(0x1a6),'appId':_0x1cb2eb(0x1a5)};firebase['initializeApp'](firebaseConfig);const db=firebase['database'](),auth=firebase[_0x1cb2eb(0x1ab)]();function logout(){const _0x207cdd=_0x1cb2eb;auth[_0x207cdd(0x194)]()[_0x207cdd(0x19c)](()=>{const _0x2abbad=_0x207cdd;sessionStorage[_0x2abbad(0x19b)](_0x2abbad(0x1aa)),window['location'][_0x2abbad(0x18c)]=_0x2abbad(0x19f);});}auth[_0x1cb2eb(0x186)](_0x4a8037=>{const _0x5c2a1c=_0x1cb2eb;!_0x4a8037||_0x4a8037[_0x5c2a1c(0x1a7)]!==_0x5c2a1c(0x18b)?window[_0x5c2a1c(0x18a)][_0x5c2a1c(0x18c)]=_0x5c2a1c(0x19f):renderVisitors();});function renderVisitors(){const _0x168593=_0x1cb2eb,_0xd6fa02=document['getElementById'](_0x168593(0x1a1));db[_0x168593(0x19a)](_0x168593(0x1a0))['on'](_0x168593(0x1ac),_0x5a2d51=>{const _0x29a39c=_0x168593;_0xd6fa02['innerHTML']='',_0x5a2d51[_0x29a39c(0x184)](_0x2f17eb=>{const _0x1942e2=_0x29a39c,_0x56c44c=_0x2f17eb[_0x1942e2(0x18d)]();_0xd6fa02['innerHTML']+=_0x1942e2(0x1a2)+_0x56c44c[_0x1942e2(0x188)]+'</h6>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22mb-1\x22><i\x20class=\x22bi\x20bi-geo-alt\x22></i>\x20'+_0x56c44c[_0x1942e2(0x1a8)]+_0x1942e2(0x198)+_0x56c44c['ip']+_0x1942e2(0x183)+new Date(_0x56c44c[_0x1942e2(0x187)])[_0x1942e2(0x196)]()+_0x1942e2(0x185);});});}function _0xa3f9(){const _0x2049b3=['</small>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','onAuthStateChanged','waktu','device','6CvwxRf','location','muhammadfauri19@gmail.com','href','val','1218275yfiCzj','254938vjcUnm','2818920fcOyyt','https://fahristrv3-default-rtdb.firebaseio.com','648GSrSBQ','931272ARCikt','signOut','386qiMsGZ','toLocaleString','23031QkCSLz','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22mb-1\x22><i\x20class=\x22bi\x20bi-wifi\x22></i>\x20IP:\x20','fahristrv3','ref','removeItem','then','472661TfbVEc','fahristrv3.firebaseapp.com','login.html','info','visitorCards','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22col-md-4\x20mb-3\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20shadow-sm\x20border-0\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-body\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h6\x20class=\x22card-title\x20mb-1\x22><i\x20class=\x22bi\x20bi-laptop\x22></i>\x20','141PtGNue','fahristrv3.appspot.com','1:241253386778:web:a9075ebfcefc7955c6dfa3','241253386778','email','lokasi','AIzaSyBlkSLowDyjGEtL37iYZHmw55lae2InQg0','userLoggedIn','auth','value','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<small\x20class=\x22text-muted\x22>','forEach'];_0xa3f9=function(){return _0x2049b3;};return _0xa3f9();}
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
