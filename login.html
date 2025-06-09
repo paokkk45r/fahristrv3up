@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Fahri Store25</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-light text-dark text-center">
+
+  <div class="container py-5">
+    <h2 class="mb-4">Login admin Fahri Store25</h2>
+    <button class="btn btn-primary" onclick="showLogin()">Login</button>
+  </div>
+
+  <script>
+function _0x1889(_0x1621a7,_0x41abd0){const _0x4a9589=_0x4a95();return _0x1889=function(_0x188951,_0x201561){_0x188951=_0x188951-0x175;let _0xd1dcb=_0x4a9589[_0x188951];return _0xd1dcb;},_0x1889(_0x1621a7,_0x41abd0);}const _0x47e8ae=_0x1889;function _0x4a95(){const _0x3fbf09=['65acScML','user','signInWithEmailAndPassword','auth','Login','error','8578872QoANjS','10jOlxHj','href','991895aMKlTn','1:241253386778:web:a9075ebfcefc7955c6dfa3','fire','AIzaSyBlkSLowDyjGEtL37iYZHmw55lae2InQg0','showValidationMessage','getPopup','38604ZXeVIl','211972PvgzlQ','setItem','muhammadfauri19@gmail.com','241253386778','#password','value','then','21310256WvETyY','24IXONno','catch','133134toPwDA','index.html','initializeApp','133LDgYgz','querySelector','8877591NXUpSR','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22email\x22\x20id=\x22email\x22\x20class=\x22swal2-input\x22\x20placeholder=\x22Email\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22password\x22\x20id=\x22password\x22\x20class=\x22swal2-input\x22\x20placeholder=\x22Password\x22>','#email','39PjiPKZ','message'];_0x4a95=function(){return _0x3fbf09;};return _0x4a95();}(function(_0x1ffb5f,_0x5a5de6){const _0x361d09=_0x1889,_0x5607aa=_0x1ffb5f();while(!![]){try{const _0x28a8c9=parseInt(_0x361d09(0x179))/0x1+-parseInt(_0x361d09(0x17f))/0x2*(-parseInt(_0x361d09(0x192))/0x3)+-parseInt(_0x361d09(0x180))/0x4*(-parseInt(_0x361d09(0x194))/0x5)+parseInt(_0x361d09(0x18a))/0x6*(parseInt(_0x361d09(0x18d))/0x7)+parseInt(_0x361d09(0x176))/0x8+parseInt(_0x361d09(0x18f))/0x9*(parseInt(_0x361d09(0x177))/0xa)+-parseInt(_0x361d09(0x187))/0xb*(parseInt(_0x361d09(0x188))/0xc);if(_0x28a8c9===_0x5a5de6)break;else _0x5607aa['push'](_0x5607aa['shift']());}catch(_0x4aa431){_0x5607aa['push'](_0x5607aa['shift']());}}}(_0x4a95,0x8338f));const firebaseConfig={'apiKey':_0x47e8ae(0x17c),'authDomain':'fahristrv3.firebaseapp.com','projectId':'fahristrv3','storageBucket':'fahristrv3.firebasestorage.app','messagingSenderId':_0x47e8ae(0x183),'appId':_0x47e8ae(0x17a)};firebase[_0x47e8ae(0x18c)](firebaseConfig);const auth=firebase[_0x47e8ae(0x197)]();function showLogin(){const _0x510a22=_0x47e8ae;Swal['fire']({'title':_0x510a22(0x198),'html':_0x510a22(0x190),'confirmButtonText':_0x510a22(0x198),'showCancelButton':!![],'preConfirm':()=>{const _0x147066=_0x510a22,_0x3033de=Swal[_0x147066(0x17e)]()[_0x147066(0x18e)](_0x147066(0x191))[_0x147066(0x185)],_0x27ced4=Swal['getPopup']()[_0x147066(0x18e)](_0x147066(0x184))['value'];if(!_0x3033de||!_0x27ced4){Swal[_0x147066(0x17d)]('Isi\x20semua\x20kolom');return;}return{'email':_0x3033de,'password':_0x27ced4};}})[_0x510a22(0x186)](_0x16566c=>{const _0x7ceb77=_0x510a22;if(_0x16566c['isConfirmed']){const {email:_0x342017,password:_0x105e8d}=_0x16566c[_0x7ceb77(0x185)];auth[_0x7ceb77(0x196)](_0x342017,_0x105e8d)['then'](_0x45f8af=>{const _0x496910=_0x7ceb77;sessionStorage[_0x496910(0x181)](_0x496910(0x195),JSON['stringify'](_0x45f8af['user'])),_0x342017===_0x496910(0x182)?location[_0x496910(0x178)]='dashadmin.html':location[_0x496910(0x178)]=_0x496910(0x18b);})[_0x7ceb77(0x189)](_0x145150=>{const _0x26549d=_0x7ceb77;Swal[_0x26549d(0x17b)]('Gagal\x20Login',_0x145150[_0x26549d(0x193)],_0x26549d(0x175));});}});}
+  </script>
+</body>
+</html>
